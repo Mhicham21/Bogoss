@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize')
+console.log(process.env)
 const db = require('./database.js')
 const jws = require('jws')
 const users = db.define('users', {
@@ -23,9 +24,10 @@ const users = db.define('users', {
     defaultValue: false
   }
 })
- users.create({username : 'admin', password: jws.sign({
+
+/* users.create({username : 'admin', password: jws.sign({
   header: { alg: 'HS256' },
   payload: 'IamAdmin',
   secret: 'my name is Karim'
-}), isAdmin: true})
+}), isAdmin: true})*/
 module.exports = users

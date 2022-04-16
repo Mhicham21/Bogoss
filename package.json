@@ -9,7 +9,7 @@
         "doc": "node src/util/swagger.js",
         "start": "npm run doc && npm run updatedb  && node src/server.js",
         "startdev": "npm run doc && nodemon src/server.js",
-        "test": "DB=bmttest.mysql npm run updatedb && DB=bmttest.mysql jest src/__tests__/api.user.test.js && DB=bmttest.mysql jest src/__tests__/api.product.test.js"
+        "test": "DB=bmttest.sqlite npm run updatedb && DB=bmttest.sqlite jest src/__tests__/api.user.test.js && DB=bmttest.sqlite jest src/__tests__/api.prouct.test.js"
     },
     "keywords": [
         "express",
@@ -34,7 +34,7 @@
         "rotating-file-stream": "^1.4.6",
         "sequelize": "^5.19.2",
         "sqlite3": "^5.0.2",
-        "mysql2": "*",
+        "mysql": "^2.17.1",
         "swagger-autogen": "^2.18.8",
         "swagger-ui-express": "^4.3.0"
     },
