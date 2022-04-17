@@ -31,6 +31,7 @@ module.exports = {
   },
   async getUsers (req, res) {
     if (!has(req.headers, 'hashedpassword')) throw new CodeError('You must specify a password', status.BAD_REQUEST)
+    console.log(req.headers)
     const {hashedpassword} = req.headers
     const data = await userModel.findOne({ where: {password : hashedpassword, isAdmin : true} })
     if(!data) throw new CodeError('Only admin has the right to access this data', status.BAD_REQUEST)
