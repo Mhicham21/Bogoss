@@ -3,6 +3,7 @@ const productModel = require('../models/products.js')
 const userModel = require('../models/users.js')
 const has = require('has-keys')
 const CodeError = require('../util/CodeError.js')
+const {checkLoggedPerson} = require('./user')
 module.exports = {
     async getProducts(req, res){
         const loggedUser = checkLoggedPerson(req, res)

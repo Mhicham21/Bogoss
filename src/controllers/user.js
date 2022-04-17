@@ -40,7 +40,6 @@ module.exports = {
   },
   async newUser (req, res) {
     const corps = req.body
-    console.log(corps)
     if (!has(corps, 'username')) throw new CodeError('You must specify the username', status.BAD_REQUEST)
     if (!has(corps, 'password')) throw new CodeError('You must specify the password', status.BAD_REQUEST)
     const { username, password } = corps
