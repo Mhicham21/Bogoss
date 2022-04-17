@@ -1,5 +1,4 @@
 const Sequelize = require('sequelize')
-console.log(process.env)
 const db = require('./database.js')
 const jws = require('jws')
 const users = db.define('users', {
@@ -18,6 +17,14 @@ const users = db.define('users', {
   password: {
     type : Sequelize.STRING(256),
     allowNull: false
+  },
+  email: {
+    type : Sequelize.STRING(256),
+    allowNull: true
+  },
+  telephone : {
+    type: Sequelize.STRING(20),
+    allowNull: true
   },
   isAdmin: {
     type: Sequelize.BOOLEAN,

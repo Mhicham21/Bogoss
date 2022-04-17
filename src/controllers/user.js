@@ -27,8 +27,13 @@ module.exports = {
     })
     const data = await userModel.findOne({ where: { username : username, password : hashedPassword } })
     if (!data) throw new CodeError('logging failed user not found', status.BAD_REQUEST)
-    res.json({ status: true, message: 'Returning user', data: {username: data.username, token: data.password}})
+    res.json({ status: true, message: 'Returning user', data: {id : data.id, username: data.username, token: data.password}})
   },
+  async getUser (req , res){
+    const {id} = await checkLoggedPerson(req, res)
+    const data = await userModel.findOne({ where: { id : id } })
+    res.json({ status: true, message: 'returning user', data : data })
+  }, 
   async getUsers (req, res) {
     if (!has(req.headers, 'hashedpassword')) throw new CodeError('You must specify a password', status.BAD_REQUEST)
     console.log(req.headers)
