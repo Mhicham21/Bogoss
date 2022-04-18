@@ -1,4 +1,4 @@
-console.log(localStorage.getItem('id'))
+
 
 function Delete() {
 
@@ -13,7 +13,7 @@ function Delete() {
 function events() {
     const xsupp = document.querySelector("input[name='xsupp']")
     xsupp.addEventListener('click', Delete)
-    const modif = document.querySelector("input[name='moddif']")
+    const modif = document.querySelector("input[name='modif']")
     modif.addEventListener('click', Modify)
 
 }
