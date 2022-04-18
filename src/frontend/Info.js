@@ -1,5 +1,4 @@
 
-import jws from 'jws'
 
 function Delete() {
 
