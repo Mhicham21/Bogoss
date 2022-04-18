@@ -1,11 +1,11 @@
-import{id} from "./Connection"
+
 
 console.log(id)
 
 function Delete() {
 
 
-    fetch('Https://projet-hicham.herokuapp.com/api/user/id',
+    fetch('Https://projet-hicham.herokuapp.com/api/user/1',
      {
          method : 'DELETE'
      }) 
@@ -33,7 +33,7 @@ function Modify(){
     body.append('email', email)
     body.append('telephone', telephone)
 
-    fetch( `Https://projet-hicham.herokuapp.com/api/users/${id}`
+    fetch( `Https://projet-hicham.herokuapp.com/api/users/1`
     ,{
         method : 'POST',
         headers : {'Content-Type':'application/x-www-form-urlencoded'}, 
@@ -48,7 +48,12 @@ function affich(){
     const email = document.querySelector(("p[name='email']"))
     const telephone = document.querySelector(("p[name='telephone']"))
 
-    fetch( `Https://projet-hicham.herokuapp.com/api/users/${id}`)
+    fetch(`Https://projet-hicham.herokuapp.com/api/users/1`, {method: 'GET'}).then(response => response.json()).then(response => response['data']).then(
+        data=> {
+            username.textContent = data.username
+            password.textContent = data.password
+        }
+    )
 
 
 

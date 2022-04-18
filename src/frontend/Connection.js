@@ -36,7 +36,6 @@ function Connect() {
 
 
 window.addEventListener("load", function () {
-    console.log('123')
     const xconnect = document.querySelector("input[type='button']")
     xconnect.addEventListener('click', Connect)
 
