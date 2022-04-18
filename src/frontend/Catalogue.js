@@ -1,25 +1,27 @@
 function afficher(){
-    const name = document.querySelector(("p[name='name']"))
-    const Description = document.querySelector(("p[name='description']"))
-    const prix = document.querySelector(("p[name='price']"))
-
-    const body = new URLSearchParams()
-    body.append('name', name)
-    body.append('description', Description)
-    body.append('price', prix)
-
+    const catalogue = document.querySelector('.catalogue')
     fetch('Https://projet-hicham.herokuapp.com/api/products', // kolchi ichof 
      {
          method : 'GET'
      }).then(result => result.json()).then(result => result['data']).then(data => {
          data.forEach(element => {
-             
+             let product = document.createElement('div')
+             let productName = document.createElement('h2')
+             productName.textContent = `product name : ${element.name}`
+             let productPrice = document.createElement('p')
+             productPrice.textContent = `product price : ${element.price}`
+             let productDescription = document.createElement('p')
+             productDescription.textContent = `product description : ${element.description}`
+             product.appendChild(productName)
+             product.appendChild(productPrice)
+             product.appendChild(productDescription)
+             catalogue.appendChild(product)
          });
      })
 
 }
 
-function AjoutProd(){
+/*function AjoutProd(){
     const name = document.querySelector(("p[name='name']"))
     const Description = document.querySelector(("p[name='description']"))
     const prix = document.querySelector(("p[name='prix']"))
@@ -70,10 +72,9 @@ function Produits(){
     modifP.addEventListener('click', ModifProd)
     ajoutP.addEventListener('click', AjoutProd)
 }
-
+*/
 function f(){
    afficher()
-   Produits()
 }
 
 window.addEventListener('load', f)
