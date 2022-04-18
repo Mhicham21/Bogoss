@@ -34,7 +34,7 @@ function Modify(){
 
     fetch( `Https://projet-hicham.herokuapp.com/api/users/${localStorage.getItem('id')}`
     ,{
-        method : 'POST',
+        method : 'PUT',
         headers : {'Content-Type':'application/x-www-form-urlencoded', hashedpassword : localStorage.getItem('hashedpassword')}, 
         body : body
     }) 

@@ -543,3 +543,8 @@
 ::ffff:127.0.0.1 - - [16/Apr/2022:22:49:37 +0000] "POST /api/users/logIn HTTP/1.1" 200 152 "-" "-"
 ::ffff:127.0.0.1 - - [16/Apr/2022:22:49:37 +0000] "DELETE /api/users/2 HTTP/1.1" 200 40 "-" "-"
 ::ffff:127.0.0.1 - - [16/Apr/2022:22:49:38 +0000] "POST /api/users/admin/products HTTP/1.1" 200 41 "-" "-"
+::ffff:127.0.0.1 - - [18/Apr/2022:20:17:54 +0000] "GET /api/users/admin HTTP/1.1" 200 293 "-" "-"
+::ffff:127.0.0.1 - - [18/Apr/2022:20:17:54 +0000] "POST /api/users/signIn HTTP/1.1" 400 49 "-" "-"
+::ffff:127.0.0.1 - - [18/Apr/2022:20:17:54 +0000] "POST /api/users/signIn HTTP/1.1" 400 58 "-" "-"
+::ffff:127.0.0.1 - - [18/Apr/2022:20:17:54 +0000] "POST /api/users/logIn HTTP/1.1" 200 159 "-" "-"
+::ffff:127.0.0.1 - - [18/Apr/2022:20:17:54 +0000] "DELETE /api/users/2 HTTP/1.1" 200 40 "-" "-"
