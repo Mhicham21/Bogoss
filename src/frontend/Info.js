@@ -1,22 +1,23 @@
-
+console.log(localStorage.getItem('id'))
 
 function Delete() {
 
 
-    fetch('Https://projet-hicham.herokuapp.com/api/user/1',
+    fetch(`Https://projet-hicham.herokuapp.com/api/user/${localStorage.getItem('id')}`,
      {
-         method : 'DELETE'
+         method : 'DELETE', headers: {hashedpassword : localStorage.getItem('hashedpassword')}
      }) 
 
 }
 
-function supp() {
-    const xsupp = document.querySelector("input[type='button']")
+function events() {
+    const xsupp = document.querySelector("input[name='xsupp']")
     xsupp.addEventListener('click', Delete)
+    const modif = document.querySelector("input[name='moddif']")
+    modif.addEventListener('click', Modify)
 
 }
 
-window.addEventListener("load", supp)
 
 
 function Modify(){
@@ -31,10 +32,10 @@ function Modify(){
     body.append('email', email)
     body.append('telephone', telephone)
 
-    fetch( `Https://projet-hicham.herokuapp.com/api/users/1`
+    fetch( `Https://projet-hicham.herokuapp.com/api/users/${localStorage.getItem('id')}`
     ,{
         method : 'POST',
-        headers : {'Content-Type':'application/x-www-form-urlencoded'}, 
+        headers : {'Content-Type':'application/x-www-form-urlencoded', hashedpassword : localStorage.getItem('hashedpassword')}, 
         body : body
     }) 
 }
@@ -46,8 +47,8 @@ function affich(){
     const email = document.querySelector(("p[name='email']"))
     const telephone = document.querySelector(("p[name='telephone']"))
 
-    fetch(`Https://projet-hicham.herokuapp.com/api/users/1`, {method: 'GET', headers: 
-    {hashedpassword : 'eyJhbGciOiJIUzI1NiJ9.SWFtQWRtaW4.YIVg8PfdSY6lWKqA9G7MA647Uhupr-dP7a02OKhFxrM'}}).then(response => response.json()).then(response => response['data']).then(
+    fetch(`Https://projet-hicham.herokuapp.com/api/users/${localStorage.getItem('id')}`, {method: 'GET', headers: 
+    {hashedpassword : localStorage.getItem('hashedpassword')}}).then(response => response.json()).then(response => response['data']).then(
         data=> {
             username.textContent = data.username
             password.textContent = data.password
@@ -58,5 +59,9 @@ function affich(){
 
 }
 
+function handler(){
+    events()
+    affich()
+}
 
-window.addEventListener('load', affich)
+window.addEventListener('load', handler)

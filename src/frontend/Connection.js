@@ -1,4 +1,4 @@
-let id
+
 
 
 function Connect() {
@@ -21,8 +21,8 @@ function Connect() {
      }).then(resultat => resultat.json()).then (resultat => resultat['data']).then(resultat => 
         {
             if (resultat) {
-                id = resultat.id
-                console.log(id)
+                localStorage.setItem('id',resultat.id)
+                localStorage.setItem('hashedpassword', resultat.token)
                 window.location.href ="Info.html"
                 }
             else { 
