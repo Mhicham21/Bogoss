@@ -23,7 +23,7 @@ app.use(cors())
 app.use(helmet())
 
 // Frontend code access in static mode
-app.use('/frontend', express.static('./src/frontend'))
+app.use('/', express.static(__dirname+'/frontend'))
 
 // This middleware adds the json header to every response
 app.use('*', (req, res, next) => {
