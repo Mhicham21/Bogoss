@@ -1,0 +1,56 @@
+body{
+              background-color: sandybrown;
+}
+
+
+.Centre
+{
+   color: whitesmoke;
+   text-align: center;
+
+
+}
+
+#Carte
+{
+	width: 1400px;
+	margin: auto;
+	background-color: gray;
+	text-align: left;
+	align-content:  center;
+	line-height: 2.5;
+	margin-top: 30px;
+        
+
+}
+
+.menu1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background-color : black;
+        color: white;
+        text-align: center;
+        zoom: 1;
+
+}
+.menu1 td {
+        padding-left: 20px;
+        padding-top: 0;
+}
+ 
+body>.menu1 {position:fixed}
+ 
+.menu1 td {
+        padding-left: 20px;
+        padding-top: 0;
+        color: whitesmoke;
+
+
+}
+
+.cont{
+	text-align: left;
+}
