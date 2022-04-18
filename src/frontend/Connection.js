@@ -44,5 +44,5 @@ window.addEventListener("load", function () {
 })
 
 
-export default {id}
+
 
