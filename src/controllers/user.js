@@ -27,11 +27,13 @@ module.exports = {
     })
     const data = await userModel.findOne({ where: { username : username, password : hashedPassword } })
     if (!data) throw new CodeError('logging failed user not found', status.BAD_REQUEST)
+    res.setHeader('Content-Type', 'application/json')
     res.json({ status: true, message: 'Returning user', data: {id : data.id, username: data.username, token: data.password}})
   },
   async getUser (req , res){
     const {id} = await checkLoggedPerson(req, res)
     const data = await userModel.findOne({ where: { id : id } })
+    res.setHeader('Content-Type', 'application/json')
     res.json({ status: true, message: 'returning user', data : data })
   }, 
   async getUsers (req, res) {
@@ -41,6 +43,7 @@ module.exports = {
     const data = await userModel.findOne({ where: {password : hashedpassword, isAdmin : true} })
     if(!data) throw new CodeError('Only admin has the right to access this data', status.BAD_REQUEST)
     const info = await userModel.findAll()
+    res.setHeader('Content-Type', 'application/json')
     res.json({ status: true, message: 'Returning users', data : info })
   },
   async newUser (req, res) {
@@ -54,6 +57,7 @@ module.exports = {
       secret: SECRET_KEY
     })
     await userModel.create({ username: username, password: hashedPassword })
+    res.setHeader('Content-Type', 'application/json')
     res.json({ status: true, message: 'User Added' })
   },
   async updateUser (req, res) {
@@ -73,11 +77,13 @@ module.exports = {
       })
       await userModel.update({ password : updatedHashedPassword }, { where: { id : id } })
     }
+    res.setHeader('Content-Type', 'application/json')
     res.json({ status: true, message: 'User updated' })
   },
   async deleteUser (req, res) {
     const {id} = await checkLoggedPerson(req, res)
     await userModel.destroy({ where: { id : id } })
+    res.setHeader('Content-Type', 'application/json')
     res.json({ status: true, message: 'User deleted' })
   }
 }

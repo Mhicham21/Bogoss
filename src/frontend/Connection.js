@@ -2,7 +2,6 @@ let id
 
 
 function Connect() {
-    console.log('123')
     const username = document.querySelector( ("input[name='username']")).value
     const password = document.querySelector( ("input[name='password']")).value
 
@@ -24,7 +23,7 @@ function Connect() {
             if (resultat) {
                 id = resultat.id
                 console.log(id)
-                window.location.href ="file:///media/fuse/crostini_7ddfb566923d9e5c36f8f42a529b623ab1e2bea1_termina_penguin/Downloads/Etudes/Projetglo/Info.html"
+                window.location.href ="Info.html"
                 }
             else { 
                  alert("identifiant ou mot de passe éroné")

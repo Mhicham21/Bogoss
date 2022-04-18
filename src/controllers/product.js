@@ -8,6 +8,7 @@ module.exports = {
     async getProducts(req, res){
         const loggedUser = checkLoggedPerson(req, res)
         const info = await productModel.findAll()
+        res.setHeader('Content-Type', 'application/json')
         res.json({ status: true, message: 'Returning products', data : info })
     },
 
@@ -32,6 +33,7 @@ module.exports = {
             const {description} = req.body
             await productModel.update({ description : description }, { where: {id : pid }})    
         }
+        res.setHeader('Content-Type', 'application/json')
         res.json({ status: true, message: 'Product updated' })
 
     },
@@ -44,6 +46,7 @@ module.exports = {
         if (!has(req.params, 'pid')) throw new CodeError('You must specify the product id', status.BAD_REQUEST)
         const { pid } = req.params
         await productModel.destroy({ where: { id : pid} })
+        res.setHeader('Content-Type', 'application/json')
         res.json({ status: true, message: 'product deleted' })
     },
 
@@ -57,6 +60,7 @@ module.exports = {
             throw new CodeError('You must specify the name of the product, the price and the description', status.BAD_REQUEST)
         const { name, price, description } = req.body
         await productModel.create({ name: name, price: price, description: description })
+        res.setHeader('Content-Type', 'application/json')
         res.json({ status: true, message: 'product Added' })
     }
 
