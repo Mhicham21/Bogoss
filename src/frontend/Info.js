@@ -7,6 +7,7 @@ function Delete() {
      {
          method : 'DELETE', headers: {hashedpassword : localStorage.getItem('hashedpassword')}
      }) 
+     window.location.href ="Projet.html"
 
 }
 
