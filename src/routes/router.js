@@ -6,4 +6,8 @@ router.use(require('./product'))
 router.get('/', function (req, res){
     res.sendFile(path.normalize(__dirname+'/../frontend/Projet.html'))
 })
+router.get('/Connection.js', function (req, res){
+    res.sendFile(path.normalize(__dirname+'/../frontend/Connection.js'))
+})
+
 module.exports = router
