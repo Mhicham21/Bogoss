@@ -1,6 +1,5 @@
 
 
-console.log(id)
 
 function Delete() {
 
