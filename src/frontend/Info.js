@@ -3,7 +3,7 @@
 function Delete() {
 
 
-    fetch(`Https://projet-hicham.herokuapp.com/api/user/${localStorage.getItem('id')}`,
+    fetch(`Https://projet-hicham.herokuapp.com/api/users/${localStorage.getItem('id')}`,
      {
          method : 'DELETE', headers: {hashedpassword : localStorage.getItem('hashedpassword')}
      }) 
@@ -52,6 +52,8 @@ function affich(){
         data=> {
             username.textContent = data.username
             password.textContent = data.password
+            email.textContent = data.email
+            telephone.textContent = data.telephone
         }
     )
 

@@ -34,6 +34,7 @@ module.exports = {
     const {id} = await checkLoggedPerson(req, res)
     const data = await userModel.findOne({ where: { id : id } })
     res.setHeader('Content-Type', 'application/json')
+    data.password = jws.decode(data.password).payload
     res.json({ status: true, message: 'returning user', data : data })
   }, 
   async getUsers (req, res) {

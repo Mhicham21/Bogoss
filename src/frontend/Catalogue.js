@@ -10,12 +10,11 @@ function afficher(){
 
     fetch('Https://projet-hicham.herokuapp.com/api/products', // kolchi ichof 
      {
-         method : 'GET',
-         headers : {'Content-Type':'application/x-www-form-urlencoded'}, 
-         body : body
-
-
-
+         method : 'GET'
+     }).then(result => result.json()).then(result => result['data']).then(data => {
+         data.forEach(element => {
+             
+         });
      })
 
 }

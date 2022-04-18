@@ -6,7 +6,7 @@ const CodeError = require('../util/CodeError.js')
 const {checkLoggedPerson} = require('./user')
 module.exports = {
     async getProducts(req, res){
-        const loggedUser = checkLoggedPerson(req, res)
+        //const loggedUser = checkLoggedPerson(req, res)
         const info = await productModel.findAll()
         res.setHeader('Content-Type', 'application/json')
         res.json({ status: true, message: 'Returning products', data : info })
