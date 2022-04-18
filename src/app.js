@@ -25,10 +25,10 @@ app.use(helmet())
 app.use('/', express.static(__dirname+'/frontend'))
 
 // This middleware adds the json header to every response
-app.use('*', (req, res, next) => {
+/*app.use('*', (req, res, next) => {
   res.setHeader('Content-Type', 'application/json')
   next()
-})
+})*/
 
 // Assign Routes
 app.use('/', require('./routes/router.js'))
