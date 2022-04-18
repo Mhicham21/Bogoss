@@ -15,6 +15,10 @@ function afficher(){
              product.appendChild(productName)
              product.appendChild(productPrice)
              product.appendChild(productDescription)
+             let bouton = document.createElement('input')
+             bouton.setAttribute('type', 'button')
+             bouton.setAttribute('value', 'acheter')
+             product.appendChild(bouton)
              catalogue.appendChild(product)
          });
      })
