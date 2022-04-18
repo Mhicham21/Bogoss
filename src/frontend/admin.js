@@ -6,7 +6,7 @@ function AjoutProd(){
     const body = new URLSearchParams()
     body.append('name', name)
     body.append('description', Description)
-    body.append('prix', prix)
+    body.append('price', prix)
 
     fetch('Https://projet-hicham.herokuapp.com/api/users/admin/products',
     {
