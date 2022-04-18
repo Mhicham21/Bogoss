@@ -17,7 +17,7 @@ function AjoutProd(){
 }
 
 
-function ModifProd()
+/*function ModifProd()
 {
     const name = document.querySelector(("p[name='name']"))
     const Description = document.querySelector(("p[name='description']"))
@@ -27,7 +27,7 @@ function ModifProd()
     body.append('name', name)
     body.append('description', Description)
     body.append('price', prix)
-    fetch(`Https://projet-hicham.herokuapp.com/api/users/admin/products${pid}`, //smit prod
+    fetch(`Https://projet-hicham.herokuapp.com/api/users/admin/products`, //smit prod
     {
         method : 'PUT',
         headers : {'Content-Type':'application/x-www-form-urlencoded'}, 
@@ -37,7 +37,7 @@ function ModifProd()
 
 function SuppProd(){
     fetch('Https://projet-hicham.herokuapp.com/api/users/admin/products',{ method : 'DELETE'}) 
-}
+}*/
 
 
 function Produits(){
@@ -45,8 +45,8 @@ function Produits(){
     const ajoutP = document.querySelector("input[type='button']")
     const modifP = document.querySelector("input[type='button']")
     const deleP = document.querySelector("input[type='button']")
-    deleP.addEventListener('click', SuppProd)
-    modifP.addEventListener('click', ModifProd)
+   /* deleP.addEventListener('click', SuppProd)
+    modifP.addEventListener('click', ModifProd)*/
     ajoutP.addEventListener('click', AjoutProd)
 }
 
