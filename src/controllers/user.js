@@ -58,8 +58,8 @@ module.exports = {
       secret: SECRET_KEY
     })
     await userModel.create({ username: username, password: hashedPassword })
-    if(has(corps, email)) userModel.update({email : corps['email']}, {where : {username : username}})
-    if(has(corps, telephone)) userModel.update({telephone : corps['telephone']}, {where : {username : username}})
+    if(has(corps, email)) await userModel.update({email : corps['email']}, {where : {username : username}})
+    if(has(corps, telephone)) await userModel.update({telephone : corps['telephone']}, {where : {username : username}})
     res.json({ status: true, message: 'User Added' })
   },
   async updateUser (req, res) {
