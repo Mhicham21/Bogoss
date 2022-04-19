@@ -7,11 +7,11 @@ function afficher(){
          data.forEach(element => {
              let product = document.createElement('div')
              let productName = document.createElement('h2')
-             productName.textContent = `product name : ${element.name}`
+             productName.textContent = `Nom: ${element.name}`
              let productPrice = document.createElement('p')
-             productPrice.textContent = `product price : ${element.price}`
+             productPrice.textContent = `Prix: ${element.price}`
              let productDescription = document.createElement('p')
-             productDescription.textContent = `product description : ${element.description}`
+             productDescription.textContent = `Description : ${element.description}`
              product.appendChild(productName)
              product.appendChild(productPrice)
              product.appendChild(productDescription)
